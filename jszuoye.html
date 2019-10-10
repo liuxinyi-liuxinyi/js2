@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#a{
+			border: 3px solid red;
+			width: 160px;
+			padding: 5px;
+			border-radius: 10px;/* 圆角 */
+			cursor: pointer;/* 鼠标滑过之后有个手的形状 */
+			margin: 0 auto;
+			text-align: center;
+			font-weight: bold;
+			/* font-weight:normal; */
+			font-color:red;
+		}
+		#b{
+			width: 320px;
+			border: 1px solid blue;
+			padding: 10px;
+			border-radius: 20px;
+			display: none;/* 隐藏 */
+			margin: 0 auto;
+		}
+		#d{
+			width: 300px;
+			height: 300px;
+			border: 4px solid red;
+			display: none;
+			
+		}
+	</style>
+</head>
+<body>
+	<div id="a">点击之后显示隐藏内容</div>
+	<div id="b">点击之显示的信息后点击之显示的信息后点击之显示的信息后</div>
+	<div id="c"><a href="#">登录</a></div>
+	<div id="d"><a href="javascript:window.opener=null;window.open('','_self');window.close();">关闭</a></div>
+	<!-- js写在这里 -->
+	<script>
+		// 1.获取操作的页面元素，并且保存到一个标示符（变量）中
+		// 获取id为a的元素，保存到名称为a的变量中
+		// getElementById(通过id获取网页上的元素，获取到的元素数量0或1)
+		var a=document.getElementById('a');
+		// 获取id为b的元素，保存到名称为	b的变量中
+		var b=document.getElementById('b');
+		var c=document.getElementById('c');
+		var d=document.getElementById('d');
+		// 点击a的时候，让b显示在页面上
+		a.onmouseover=function () {
+			b.style.display='block';
+		}
+		a.onmouseout=function () {
+			b.style.display='none';
+		}
+		c.onclick=function () {
+			d.style.display='block';
+		}
+		d.onclick=function () {
+			d.style.display='none';
+		}
+	</script>
+</body>
+</html>
